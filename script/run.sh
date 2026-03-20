@@ -6,11 +6,10 @@ export CUDA_VISIBLE_DEVICES=0,1
 
 NUM_WORKERS=2
 DATA_POINT=4
-DATASET=scienceqa
+DATASET=mmvp
 DATASET_FILE=data/${DATASET}.json
-OUTPUT_DIR=./output_vis/v8/${DATASET}/${DATA_POINT}/qwen_initpatch_passk
-
-MODEL_NAME=Qwen/Qwen2.5-VL-7B-Instruct
+MODEL_NAME=Qwen/Qwen3-VL-8B-Instruct
+OUTPUT_DIR=./output/v1/${MODEL_NAME}/${DATASET}
 
 uv run python main.py \
     --dataset $DATASET_FILE \
