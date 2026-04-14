@@ -6,3 +6,4 @@ tests
 .uv-cache
 .env
 output
+output_vis
