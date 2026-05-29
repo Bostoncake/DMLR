@@ -1,18 +1,18 @@
 #!/bin/bash
 set -euo pipefail
 
-export HF_HOME=.cache
-export CUDA_VISIBLE_DEVICES=0,1
+export HF_HOME=~/.huggingface_cache
+export CUDA_VISIBLE_DEVICES=0
 
-NUM_WORKERS=2
-DATA_POINT=4
-DATASET=scienceqa
+NUM_WORKERS=1
+# DATA_POINT=4
+DATASET=mmvp
 DATASET_FILE=data/${DATASET}.json
-OUTPUT_DIR=./output_vis/v8/${DATASET}/${DATA_POINT}/qwen_initpatch_passk
+OUTPUT_DIR=./output_vis/0325_reproduce/${DATASET}/Qwen2.5-VL-7B-Instruct
 
-MODEL_NAME=Qwen/Qwen2.5-VL-7B-Instruct
+MODEL_NAME=/WillDevExt/xiongyizhe/models/Qwen2.5-VL-7B-Instruct
 
-uv run python main.py \
+python main.py \
     --dataset $DATASET_FILE \
     --model_name_or_path $MODEL_NAME \
     --output_dir $OUTPUT_DIR \
@@ -28,7 +28,6 @@ uv run python main.py \
     --min_pixels 128 \
     --max_pixels 256 \
     --start_data_idx 0 \
-    --end_data_idx $DATA_POINT \
     --use_llm_verify \
     --num_workers $NUM_WORKERS \
     --worker_device_round_robin \

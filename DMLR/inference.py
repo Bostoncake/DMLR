@@ -1,14 +1,14 @@
 import torch
 import torch.nn as nn
-from reward import RewardModel
-from logger import log
+from DMLR.reward import RewardModel
+from DMLR.logger import log
 from typing import Dict, Union, Optional, Tuple, List
 from pathlib import Path
 import numpy as np
 import os
 import csv
 from PIL import Image
-from prompts import SYSTEM_PROMPT
+from DMLR.prompts import SYSTEM_PROMPT
 try:
     from colorama import Fore, Style
     init_colorama = True

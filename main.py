@@ -48,7 +48,7 @@ def parse_args():
     parser.add_argument("--model_name_or_path", type=str, default="Qwen/Qwen2.5-VL-7B-Instruct", help="Path to the VL model")
     parser.add_argument("--output_dir", type=str, help="Path to the output directory")
     parser.add_argument("--start_data_idx", type=int, default=0, help="Start index of the data to evaluate")
-    parser.add_argument("--end_data_idx", type=int, default=100, help="End index of the data to evaluate")
+    parser.add_argument("--end_data_idx", type=int, default=None, help="End index of the data to evaluate")
     parser.add_argument("--max_new_tokens", type=int, default=2048, help="Number of generated tokens")
     parser.add_argument("--device", type=str, default="cuda")
 
